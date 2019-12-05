@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scary Hallowen Party</title>
+    <link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Creepster|Sancreek&display=swap" rel="stylesheet">
+    <style>
+    body {background-color: black;}
+    #wrapper {position: relative;
+        background-image: url("imagenes/fondo.jpg");
+        width: 1920px;
+        height: 879px;
+        margin: 20px auto;
+        border radius:200px;
+        margin:auto;}
+        h1 {position: absolute;/* lo que va dentro se mueve con él */
+            left: 400px;
+            top: 20px;
+            font-family: 'Creepster', cursive;
+            font-size: 350%;
+            background-color: red;}
+    #p1 {position: absolute;
+    top:700px;
+    left: 800px;
+    font-size: 250%;
+    font-family: 'Sancreek', cursive;
+    background-color:red;}
+    #pumpkin {position: absolute;
+    width:600px;
+    height: 300px;
+    left: 1290px;
+    top: 400px;}
+    #ghost {position:absolute;
+    width:200px;
+    height: 300px;
+    left:480px;
+    top:300px}
+    #zombi {position: absolute;
+    top:300px;
+    left:750px;
+    visibility: hidden;}
+    #bat {position: absolute;
+    visibility: hidden;}
+    </style>
+    <script>
+        function mostrar(id){
+            document.getElementById(id).style.visibility="visible";
+        }
+        function ocultar(id){
+            document.getElementById(id).style.visibility="hidden";
+        }
+        function sonar(id){
+        document.getElementById(id).play();
+        }
+        function parar (id){
+        document.getElementById(id).pause();
+        }
+    </script>
+</head>
+<body>
+        <audio id="demon">
+                <source src="sonidos/Demon_Girls_Mockingbir-Hello-1365708396.mp3" type="audio/mpeg">
+              </audio>
+    <div id="wrapper">
+    <h1>Scary Hallowen Party</h1>
+    <p id="p1">Don't disturb the pumpkin!!!...</p>
+    <div id="pumpkin" onclick="mostrar('zombi');sonar('demon')"></div>
+    <div id="ghost"></div>
+    <img id="zombi" onclick="ocultar('zombi');parar('demon')"src="imagenes/zombi.gif" height="350">
+    <img id="bat" src="imagenes/Bat.gif" height="350">
+    </div>
+</body>
+</html>
